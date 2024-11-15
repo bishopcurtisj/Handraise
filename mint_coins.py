@@ -1,5 +1,4 @@
 import json
-!pip install web3
 from web3 import Web3
 
 # Connect to the Ethereum network
