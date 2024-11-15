@@ -1,20 +1,26 @@
 import requests
+import json
 
 ## dictionary of students and their addresses
+def prepare_data():
+    with open('students.csv', 'r') as f:
+        students = {}
+        for line in f:
+            name, address = line.split(',')
+            students[name] = address
 
-with open('students.csv', 'r') as f:
-    students = {}
-    for line in f:
-        name, address = line.split(',')
-        students[name] = address
+    json.dump(students, "students.json")
 
-## dictionary of students and their grades
-with open('grades.csv', 'r') as f:
-    grades = {}
-    for line in f:
-        name, grade = line.split(',')
-        grades[name] = grade
+    ## dictionary of students and their grades
+    with open('grades.csv', 'r') as f:
+        grades = {}
+        for line in f:
+            name, grade = line.split(',')
+            grades[name] = grade
 
+    json.dump(grades, "grades.json")
+
+    return students, grades
 
 # Replace with your Canvas instance URL and API token
 BASE_URL = "https://yourcanvasinstance.instructure.com/api/v1"
@@ -39,6 +45,7 @@ def update_grade(course_id, assignment_id, user_id, grade):
 
 
 def grading():
+    students, grades = prepare_data()
     course_id = 12345
     assignment_id = 67890
 
