@@ -1,33 +1,29 @@
 import requests
 import json
+import pandas as pd
 
 ## dictionary of students and their addresses
 def prepare_data():
-    with open('students.csv', 'r') as f:
-        students = {}
-        for line in f:
-            name, address = line.split(',')
-            students[name] = address
+    
+    ## columns = ["name", A-number, "address", points]
+    students = pd.read_csv("students.csv")
 
-    json.dump(students, "students.json")
+    addresses = students[['a_number', 'address']].set_index('a_number')
+    addresses.to_json("students.json")
+    grades = students[['a_number', 'points']].set_index('a_number')
+    grades.to_json("grades.json")
 
-    ## dictionary of students and their grades
-    with open('grades.csv', 'r') as f:
-        grades = {}
-        for line in f:
-            name, grade = line.split(',')
-            grades[name] = grade
 
-    json.dump(grades, "grades.json")
-
-    return students, grades
+    return addresses.to_dict(), grades.to_dict()
 
 # Replace with your Canvas instance URL and API token
 BASE_URL = "https://yourcanvasinstance.instructure.com/api/v1"
 ACCESS_TOKEN = "your_access_token"
+COURSE_ID = 1234  # Replace with your course ID
+ASSIGNMENT_ID = 5678  # Replace with your assignment ID
 
-def update_grade(course_id, assignment_id, user_id, grade):
-    url = f"{BASE_URL}/courses/{course_id}/assignments/{assignment_id}/submissions/{user_id}"
+def update_grade(user_id, grade):
+    url = f"{BASE_URL}/courses/{COURSE_ID}/assignments/{ASSIGNMENT_ID}/submissions/{user_id}"
     headers = {
         "Authorization": f"Bearer {ACCESS_TOKEN}",
         "Content-Type": "application/json"
@@ -44,16 +40,20 @@ def update_grade(course_id, assignment_id, user_id, grade):
         print(f"Failed to update grade: {response.status_code}, {response.text}")
 
 
-def grading():
-    students, grades = prepare_data()
-    course_id = 12345
-    assignment_id = 67890
-
-    for student, address in students.items():
-        grade = grades.get(student)
-        if grade:
-            user_id = address
-            update_grade(course_id, assignment_id, user_id, grade)
-
-
 ## TODO: view the emitted events and update grades
+
+def update_grades(students, grades):
+    
+    events = pd.read_csv("tokens_burned_events.csv")
+
+    for value in students.values():
+        if value in events['Sender'].values:
+            ## get the index of the value
+            index = events[events['Sender'] == value].index[0]
+            grade = events['Amount Burned'][index]
+            user_id = value
+            update_grade(user_id, grade)
+        else:
+            print(f"User {value} did not burn any tokens")
+
+
