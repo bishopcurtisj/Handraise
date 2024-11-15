@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract MyToken is ERC20 {
+contract Handraise is ERC20 {
     address public owner;
 
     // Event to log when tokens are sent to the contract and burned
@@ -18,7 +18,7 @@ contract MyToken is ERC20 {
     event ReceivedETH(address indexed sender, uint256 amount);
 
 
-    constructor(uint256 initialSupply) ERC20("MyToken", "MTK") {
+    constructor(uint256 initialSupply) ERC20("Handraise", "HDR") {
         owner = msg.sender;
         _mint(msg.sender, initialSupply * (10 ** decimals()));
     }
