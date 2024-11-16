@@ -20,13 +20,12 @@ def mint_coins(file_path):
     owner_address = "YOUR_WALLET_ADDRESS"  # Replace with your wallet address
     private_key = "YOUR_PRIVATE_KEY"  # Replace with your private key
 
-    # Load data from JSON
     with open(file_path, "r") as file:
         data = json.load(file)
 
     # Prepare recipients and amounts
-    recipients = [entry["address"] for entry in data]
-    amounts = [entry["amount"] for entry in data]
+    recipients = [entry["address"] for entry in data.values()]
+    amounts = [entry["points"] for entry in data.values()]
 
     # Build transaction
     nonce = web3.eth.getTransactionCount(owner_address)

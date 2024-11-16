@@ -8,13 +8,14 @@ def prepare_data():
     ## columns = ["name", A-number, "address", points]
     students = pd.read_csv("students.csv")
 
-    addresses = students[['a_number', 'address']].set_index('a_number')
-    addresses.to_json("students.json")
-    grades = students[['a_number', 'points']].set_index('a_number')
-    grades.to_json("grades.json")
+    grades = students[['a_number', 'address', 'points']].set_index('a_number').to_dict(orient='index')
 
+    with open('grades.json', 'w') as f:
+        json.dump(grades, f, indent=4)
+    
 
-    return addresses.to_dict(), grades.to_dict()
+    return grades
+
 
 # Replace with your Canvas instance URL and API token
 BASE_URL = "https://yourcanvasinstance.instructure.com/api/v1"
