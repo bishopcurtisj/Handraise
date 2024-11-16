@@ -1,11 +1,15 @@
 const hre = require("hardhat");
 
 async function main() {
-  const initialSupply = 10; // 1 million tokens
+  const initialSupply = 100000; // 1 million tokens
 
   // Deploy the contract
   const Handraise = await hre.ethers.getContractFactory("Handraise");
-  const handraise = await Handraise.deploy(initialSupply);
+  console.log("Contract factory created");
+
+  const handraise = await Handraise.deploy(10);
+  console.log("Deployment transaction:", handraise.deployTransaction);
+
 
   await handraise.deployed();
 
