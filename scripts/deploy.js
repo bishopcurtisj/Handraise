@@ -1,24 +1,22 @@
 const hre = require("hardhat");
 
 async function main() {
-  const initialSupply = 100000; // 1 million tokens
-
-  // Deploy the contract
+  // Get the contract factory
   const Handraise = await hre.ethers.getContractFactory("Handraise");
   console.log("Contract factory created");
 
-  const handraise = await Handraise.deploy(10);
-  console.log("Deployment transaction:", handraise.deployTransaction);
+  // Deploy the contract
+  const handraise = await Handraise.deploy(1000000); // Pass initial supply if needed
+  console.log("Deployment transaction:", handraise.deployTransaction.hash);
 
-
+  // Wait for the contract to be deployed
   await handraise.deployed();
-
-  console.log(`MyToken deployed to: ${handraise.address}`);
+  console.log("Contract deployed to:", handraise.address);
 }
 
-main()
-  .then(() => process.exit(0))
-  .catch((error) => {
-    console.error(error);
-    process.exit(1);
-  });
+// We recommend this pattern to be able to use async/await everywhere
+// and properly handle errors.
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
