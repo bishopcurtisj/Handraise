@@ -4,8 +4,6 @@ import pandas as pd
 from dotenv import load_dotenv
 import os
 
-# Load environment variables from .env file
-load_dotenv()
 
 ## dictionary of students and their addresses
 def prepare_data():
@@ -22,6 +20,8 @@ def prepare_data():
     return grades
 
 
+# Load environment variables from .env file
+load_dotenv()
 # Replace with your Canvas instance URL and API token
 BASE_URL = os.getenv("CANVAS_URL")
 ACCESS_TOKEN = os.getenv("CANVAS_ACCESS_TOKEN")
