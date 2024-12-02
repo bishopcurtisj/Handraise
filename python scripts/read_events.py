@@ -12,9 +12,7 @@ def read_events():
     load_dotenv()
 
     # Access environment variables
-    private_key = os.getenv("PRIVATE_KEY")
     sepolia_rpc_url = os.getenv("SEPOLIA_RPC_URL")
-    public_address = os.getenv("PUBLIC_ADDRESS")
     # Infura or other provider URL
     INFURA_URL = sepolia_rpc_url  # Replace with your Infura URL
     web3 = Web3(Web3.HTTPProvider(INFURA_URL))
@@ -33,9 +31,9 @@ def read_events():
 
     # Event signature for TokensBurned(address indexed sender, uint256 amount)
     event_signature_hash = web3.keccak(text="TokensBurned(address,uint256)").hex()
-
+    event_signature_hash = "0x" + event_signature_hash
     # Define block range to scan
-    START_BLOCK = 7_200_000  # Replace with the block number where your contract was deployed
+    START_BLOCK = 7_100_000  # Replace with the block number where your contract was deployed
     END_BLOCK = web3.eth.block_number  # Get the latest block number
 
     # List to store event data
@@ -52,7 +50,7 @@ def read_events():
 
     for log in logs:
         # Decode the log data
-        decoded_event = contract.events.TokensBurned().processLog(log)
+        decoded_event = contract.events.TokensBurned().process_log(log)
         sender = decoded_event["args"]["sender"]
         amount = decoded_event["args"]["amount"]
         block_number = decoded_event["blockNumber"]
@@ -69,3 +67,6 @@ def read_events():
     df.to_csv("tokens_burned_events.csv", index=False)
 
     print(f"TokensBurned events saved to 'tokens_burned_events.csv'.")
+
+
+

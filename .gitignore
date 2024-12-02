@@ -2,6 +2,7 @@ node_modules
 
 node_modules
 .env
+python\ scripts/tests.py
 
 hardhat/hardhat.config.js
 
