@@ -24,6 +24,8 @@ def main():
         elif choice == "3":
             print("Exiting...")
             os.remove("grades.json")
+            os.remove("tokens_burned_events.csv")
+
             break
 
     
