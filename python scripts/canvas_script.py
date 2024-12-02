@@ -1,6 +1,11 @@
 import requests
 import json
-import pandas as pd
+import pandas as pd 
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 ## dictionary of students and their addresses
 def prepare_data():
@@ -18,10 +23,10 @@ def prepare_data():
 
 
 # Replace with your Canvas instance URL and API token
-BASE_URL = "https://yourcanvasinstance.instructure.com/api/v1"
-ACCESS_TOKEN = "your_access_token"
-COURSE_ID = 1234  # Replace with your course ID
-ASSIGNMENT_ID = 5678  # Replace with your assignment ID
+BASE_URL = os.getenv("CANVAS_URL")
+ACCESS_TOKEN = os.getenv("CANVAS_ACCESS_TOKEN")
+COURSE_ID = os.getenv("COURSE_ID")  # Replace with your course ID
+ASSIGNMENT_ID = os.getenv("ASSIGNMENT_ID")  # Replace with your assignment ID
 
 def update_grade(user_id, grade):
     url = f"{BASE_URL}/courses/{COURSE_ID}/assignments/{ASSIGNMENT_ID}/submissions/{user_id}"
@@ -41,9 +46,7 @@ def update_grade(user_id, grade):
         print(f"Failed to update grade: {response.status_code}, {response.text}")
 
 
-## TODO: view the emitted events and update grades
-
-def update_grades(students, grades):
+def update_grades(students):
     
     events = pd.read_csv("tokens_burned_events.csv")
 

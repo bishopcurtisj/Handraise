@@ -18,9 +18,14 @@ contract Handraise is ERC20 {
     event ReceivedETH(address indexed sender, uint256 amount);
 
 
-    constructor(uint256 initialSupply) ERC20("Handraise", "HDR") {
+    constructor(
+        string memory name,
+        string memory symbol,
+        uint8 decimals,
+        uint256 initialSupply
+    ) ERC20(name, symbol) {
         owner = msg.sender;
-        _mint(msg.sender, initialSupply * (10 ** decimals()));
+        _mint(msg.sender, initialSupply * (10 ** decimals));
     }
 
     // Function to accept ETH transfers and store it

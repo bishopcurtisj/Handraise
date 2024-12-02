@@ -1,9 +1,20 @@
 import json
 from web3 import Web3
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Access environment variables
+private_key = os.getenv("PRIVATE_KEY")
+sepolia_rpc_url = os.getenv("SEPOLIA_RPC_URL")
+public_address = os.getenv("PUBLIC_ADDRESS")
+
 
 def mint_coins(file_path):
     # Connect to the Ethereum network
-    infura_url = "https://goerli.infura.io/v3/YOUR_INFURA_PROJECT_ID"  # Replace with your Infura URL
+    infura_url = sepolia_rpc_url  # Replace with your Infura URL
     web3 = Web3(Web3.HTTPProvider(infura_url))
 
     # Check connection
@@ -12,13 +23,13 @@ def mint_coins(file_path):
         exit()
 
     # Set up contract details
-    contract_address = "DEPLOYED_CONTRACT_ADDRESS"  # Replace with your contract's address
+    contract_address = os.getenv("CONTRACT_ADDRESS") # Replace with your contract's address
     contract_abi = json.loads("""[YOUR_CONTRACT_ABI_HERE]""")  # Replace with your contract's ABI
     contract = web3.eth.contract(address=contract_address, abi=contract_abi)
 
     # Set up account details
-    owner_address = "YOUR_WALLET_ADDRESS"  # Replace with your wallet address
-    private_key = "YOUR_PRIVATE_KEY"  # Replace with your private key
+    owner_address = public_address  # Replace with your wallet address
+    private_key = private_key  # Replace with your private key
 
     with open(file_path, "r") as file:
         data = json.load(file)

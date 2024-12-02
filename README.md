@@ -36,3 +36,16 @@ Creates a smart contract that mints coins to students according to class partici
 When the tokens are transferred back to the smart contract the tokens are burned and an event is emitted.
 Any eth that is sent to the contract is stored and an event is emitted. For the longevity of the contract we suggest 
 offering extra credit for extra sepolia eth.
+
+
+
+## Example .env file
+
+PRIVATE_KEY=your_private_key
+SEPOLIA_RPC_URL=https://sepolia.infura.io/v3/your_project_id
+PUBLIC_ADDRESS=your_public_addresss
+CANVAS_URL=https://yourcanvasinstance.instructure.com/api/v1
+CANVAS_ACCESS_TOKEN=your_canvas_access_token
+COURSE_ID=1234
+ASSIGNMENT_ID=5678
+CONTRACT_ADDRESS=your_contract_address

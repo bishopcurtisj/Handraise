@@ -1,10 +1,20 @@
 from web3 import Web3
 import pandas as pd
 import json
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Access environment variables
+private_key = os.getenv("PRIVATE_KEY")
+sepolia_rpc_url = os.getenv("SEPOLIA_RPC_URL")
+public_address = os.getenv("PUBLIC_ADDRESS")
 
 def read_events():
     # Infura or other provider URL
-    INFURA_URL = "https://goerli.infura.io/v3/YOUR_INFURA_PROJECT_ID"  # Replace with your Infura URL
+    INFURA_URL = sepolia_rpc_url  # Replace with your Infura URL
     web3 = Web3(Web3.HTTPProvider(INFURA_URL))
 
     # Check connection
@@ -13,7 +23,7 @@ def read_events():
         exit()
 
     # Contract details
-    CONTRACT_ADDRESS = "YOUR_CONTRACT_ADDRESS"  # Replace with your contract's address
+    CONTRACT_ADDRESS = os.getenv("CONTRACT_ADDRESS") # Replace with your contract's address
     CONTRACT_ABI = json.loads("""[YOUR_CONTRACT_ABI_HERE]""")  # Replace with your contract's ABI
 
     # Initialize contract
