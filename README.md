@@ -28,7 +28,7 @@ The columns are: [name,a_number,address,points]
 **Contracts/:**  
 Contains solidity code for smart contract
 
-**Scripts/:** 
+**Migrations/:** 
 Contains js script for deploying smart contract
 
 **Contracts/Handraise.sol:** 
