@@ -20,11 +20,11 @@ def main():
         elif choice == "2":
             read_events()
             update_grades(grades)
+            os.remove("tokens_burned_events.csv")
 
         elif choice == "3":
             print("Exiting...")
             os.remove("grades.json")
-            os.remove("tokens_burned_events.csv")
 
             break
 

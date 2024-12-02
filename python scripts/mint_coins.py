@@ -7,7 +7,7 @@ import os
 
 def mint_coins(file_path):
     # Set up account details
-
+    decimals = 18
     # Load environment variables from .env file
     load_dotenv()
 
@@ -38,7 +38,7 @@ def mint_coins(file_path):
 
     # Prepare recipients and amounts
     recipients = [entry["address"] for entry in data.values()]
-    amounts = [entry["points"] for entry in data.values()]
+    amounts = [entry["points"]*(10**decimals) for entry in data.values()]
 
     # Build transaction
     nonce = web3.eth.get_transaction_count(owner_address)
