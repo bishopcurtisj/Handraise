@@ -6,6 +6,8 @@ python\ scripts/tests.py
 tests/
 hardhat/hardhat.config.js
 
+__pycache__/
+
 # Hardhat files
 /cache
 /artifacts
