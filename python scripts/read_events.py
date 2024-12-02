@@ -20,14 +20,14 @@ def read_events():
     web3 = Web3(Web3.HTTPProvider(INFURA_URL))
 
     # Check connection
-    if not web3.isConnected():
+    if not web3.is_connected():
         print("Failed to connect to Ethereum network")
         exit()
 
     # Contract details
     CONTRACT_ADDRESS = os.getenv("CONTRACT_ADDRESS") # Replace with your contract's address
-    CONTRACT_ABI = json.loads("""[YOUR_CONTRACT_ABI_HERE]""")  # Replace with your contract's ABI
-
+    with open("../build/contracts/Handraise.json") as f:
+            CONTRACT_ABI = json.load(f)["abi"]
     # Initialize contract
     contract = web3.eth.contract(address=CONTRACT_ADDRESS, abi=CONTRACT_ABI)
 
@@ -35,7 +35,7 @@ def read_events():
     event_signature_hash = web3.keccak(text="TokensBurned(address,uint256)").hex()
 
     # Define block range to scan
-    START_BLOCK = 0  # Replace with the block number where your contract was deployed
+    START_BLOCK = 7_200_000  # Replace with the block number where your contract was deployed
     END_BLOCK = web3.eth.block_number  # Get the latest block number
 
     # List to store event data
@@ -60,7 +60,7 @@ def read_events():
         # Append to the list
         events_data.append({
             "Sender": sender,
-            "Amount Burned": web3.fromWei(amount, "ether"),  # Convert to Ether if applicable
+            "Amount Burned": web3.from_wei(amount, "ether"),  # Convert to Ether if applicable
             "Block Number": block_number
         })
 
