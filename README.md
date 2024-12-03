@@ -7,6 +7,23 @@ The python scripts require the following packages:
 - pandas
 - dotenv
 
+They can be installed with:
+```bash
+pip install pandas web3 dotenv
+```
+```bash
+conda install pandas web3 dotenv
+```
+
+The required NPM packages are:
+- @truffle/hdwallet-provider
+- dotenv
+
+They can be installed with:
+```bash
+npm install @truffle/hdwallet-provider dotenv
+```
+
 All of the code will require a .env file in the root directory, example contents of this file can be found [here](#example-env-file)
 
 ## Usage
