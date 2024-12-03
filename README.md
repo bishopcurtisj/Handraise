@@ -1,5 +1,7 @@
 # Handraise
 
+**Contract Address: 0xc24a1F9B20518D483784Fb91cc2Df39305A7bca7**
+
 ## Requirements
 
 The python scripts require the following packages:
