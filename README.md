@@ -37,6 +37,7 @@ Reads token burning events and then updates student grades in canvas according t
 **3. Read Events**
 Reads token burning events then prints student a-numbers and tokens burned, primarily for testing.
 
+In order to deploy the smart contract follow the instructions in this [file](truffle_deployment_instructions.md)
 
 ## File Organization
 
