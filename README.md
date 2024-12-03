@@ -76,7 +76,7 @@ offering extra credit for extra sepolia eth.
 ## Example .env file
 
 PRIVATE_KEY=your_private_key\
-SEPOLIA_RPC_URL=https://sepolia.infura.io/v3/your_project_id
+SEPOLIA_RPC_URL=https://sepolia.infura.io/v3/your_project_id \
 PUBLIC_ADDRESS=your_public_addresss\
 CANVAS_URL=https://yourcanvasinstance.instructure.com/api/v1
 CANVAS_ACCESS_TOKEN=your_canvas_access_token\
