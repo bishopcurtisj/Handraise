@@ -69,4 +69,16 @@ def read_events():
     print(f"TokensBurned events saved to 'tokens_burned_events.csv'.")
 
 
+def test_grades(students):
+    
+    events = pd.read_csv("tokens_burned_events.csv")
 
+    for student in students.keys():
+        if students[student]['address'] in events['Sender'].values:
+            ## get the index of the value
+            index = events[events['Sender'] == students[student]['address']].index[0]
+            grade = events['Amount Burned'][index]
+            user_id = student
+            print(user_id, grade)
+        else:
+            print(f"User {student} did not burn any tokens")

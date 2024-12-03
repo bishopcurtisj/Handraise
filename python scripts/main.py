@@ -12,7 +12,8 @@ def main():
     while True:
         print("\n1. Mint Coins")
         print("2. Update Grades")
-        print("3. Exit")
+        print("3. Read Events")
+        print("4. Exit")
         choice = input("Enter your choice: ")
 
         if choice == "1":
@@ -20,15 +21,20 @@ def main():
         elif choice == "2":
             read_events()
             update_grades(grades)
+            print("Grades updated successfully!")
             os.remove("tokens_burned_events.csv")
 
         elif choice == "3":
+            print("Reading events...")
+            read_events()
+            test_grades(grades)
+    
+        elif choice == "4":
             print("Exiting...")
             os.remove("grades.json")
 
             break
 
-    
         else:
             print("Invalid choice. Please try again.")
 

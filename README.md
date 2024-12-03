@@ -1,13 +1,46 @@
 # Handraise
 
+## Requirements
+
+The python scripts require the following packages:
+- web3
+- pandas
+- dotenv
+
+All of the code will require a .env file in the root directory, example contents of this file can be found [here](#example-env-file)
+
 ## Usage
+
 From the directory that main.py is in run 
 ```
 python main.py
 ```
 Then choose the relevant menu options by entering the associated number.
 
+```
+$ python main.py
+
+1. Mint Coins
+2. Update Grades
+3. Read Events
+4. Exit
+Enter your choice:
+
+```
+
+**1. Mint Coins**
+Reads the students.csv file and mints coins equal to earned points to each student address in the file.
+
+**2. Update Grades**
+Reads token burning events and then updates student grades in canvas according to the tokens burned by each student.
+
+**3. Read Events**
+Reads token burning events then prints student a-numbers and tokens burned, primarily for testing.
+
+
 ## File Organization
+
+### python scripts/
 
 **main.py:** 
 Contains the CLI menu for functionalities
@@ -41,11 +74,11 @@ offering extra credit for extra sepolia eth.
 
 ## Example .env file
 
-PRIVATE_KEY=your_private_key
+PRIVATE_KEY=your_private_key\
 SEPOLIA_RPC_URL=https://sepolia.infura.io/v3/your_project_id
-PUBLIC_ADDRESS=your_public_addresss
+PUBLIC_ADDRESS=your_public_addresss\
 CANVAS_URL=https://yourcanvasinstance.instructure.com/api/v1
-CANVAS_ACCESS_TOKEN=your_canvas_access_token
-COURSE_ID=1234
-ASSIGNMENT_ID=5678
+CANVAS_ACCESS_TOKEN=your_canvas_access_token\
+COURSE_ID=1234\
+ASSIGNMENT_ID=5678\
 CONTRACT_ADDRESS=your_contract_address
