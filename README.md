@@ -6,13 +6,14 @@ The python scripts require the following packages:
 - web3
 - pandas
 - dotenv
+- streamlit (only if you'd like to use the web app GUI instead of the CLI)
 
 They can be installed with:
 ```bash
-pip install pandas web3 dotenv
+pip install pandas web3 dotenv streamlit
 ```
 ```bash
-conda install pandas web3 dotenv
+conda install pandas web3 dotenv streamlit
 ```
 
 The required NPM packages are:
@@ -26,7 +27,23 @@ npm install @truffle/hdwallet-provider dotenv
 
 All of the code will require a .env file in the root directory, example contents of this file can be found [here](#example-env-file)
 
-## Usage
+## GUI Usage
+
+From the directory that dash.py is in run
+```
+streamlit run dash.py
+```
+The web app should open automatically, if it does not you can access it at addresses output in your terminal.
+The addresses are typically:
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.50.14:8501
+
+Upload the students.csv file and select the functions you wish to utilize using the app's elements.
+
+**Web App Example**
+![web app example](assets/web_app.png)
+
+## CLI Usage
 
 From the directory that main.py is in run 
 ```
