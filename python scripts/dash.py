@@ -13,8 +13,8 @@ def img_to_base64(img_path):
 
 # Function to handle Mint Coins
 def handle_mint_coins():
-    mint_coins("grades.json")
-    st.success("Coins minted successfully!")
+    msg = mint_coins("grades.json")
+    st.success(f"Coins minted successfully!\n\n{msg}")
 
 # Function to handle Update Grades
 def handle_update_grades(grades):

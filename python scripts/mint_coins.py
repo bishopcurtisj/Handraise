@@ -22,8 +22,10 @@ def mint_coins(file_path):
 
     # Check connection
     if not web3.is_connected():
-        print("Failed to connect to Ethereum network")
-        exit()
+        msg = "Failed to connect to Ethereum network"
+        print(msg)
+        return msg
+
 
     # Set up contract details
     contract_address = os.getenv("CONTRACT_ADDRESS") # Replace with your contract's address
@@ -54,8 +56,15 @@ def mint_coins(file_path):
 
     # Send the transaction
     tx_hash = web3.eth.send_raw_transaction(signed_tx.raw_transaction)
-    print(f"Transaction sent! TX Hash: {web3.to_hex(tx_hash)}")
+    send_msg = f"Transaction sent! TX Hash: {web3.to_hex(tx_hash)}"
+    print(send_msg)
 
     # Wait for confirmation
     tx_receipt = web3.eth.wait_for_transaction_receipt(tx_hash)
-    print(f"Transaction confirmed! Block: {tx_receipt.blockNumber}")
+    confirm_msg = f"Transaction confirmed in block {tx_receipt['blockNumber']}"
+    print(confirm_msg)
+
+    msg = f"{send_msg}\n\n{confirm_msg}"
+
+    return msg
+
