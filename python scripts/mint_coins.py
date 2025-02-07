@@ -40,6 +40,14 @@ def mint_coins(file_path):
 
     # Prepare recipients and amounts
     recipients = [entry["address"] for entry in data.values()]
+    for i in range(len(recipients)):
+        if not web3.is_checksum_address(recipients[i]):
+            recipients[i] = web3.to_checksum_address(recipients[i])
+    for recipient in recipients:
+        if not web3.is_address(recipient):
+            msg = f"Invalid address: {recipient}"
+            print(msg)
+            recipients.remove(recipient)
     amounts = [entry["points"]*(10**decimals) for entry in data.values()]
 
     # Build transaction
@@ -60,9 +68,13 @@ def mint_coins(file_path):
     print(send_msg)
 
     # Wait for confirmation
-    tx_receipt = web3.eth.wait_for_transaction_receipt(tx_hash)
-    confirm_msg = f"Transaction confirmed in block {tx_receipt['blockNumber']}"
-    print(confirm_msg)
+    try:
+        tx_receipt = web3.eth.wait_for_transaction_receipt(tx_hash)
+        confirm_msg = f"Transaction confirmed in block {tx_receipt['blockNumber']}"
+        print(confirm_msg)
+    except web3.exceptions.TimeExhausted as e:
+        print(f"Transaction not confirmed: {e}")
+    
 
     msg = f"{send_msg}\n\n{confirm_msg}"
 

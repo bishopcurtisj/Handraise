@@ -1,18 +1,170 @@
 {
-    "A01234569": {
-        "address": "0xC39E4FEDce17F0B15ADa58B56e45331669E57Ed6",
-        "points": 100
-    },
     "A02313432": {
         "address": "0x340d55B04440D60e96e0F1902AE0aa262B7d66b7",
-        "points": 100
+        "points": 1000000
     },
-    "A00000000": {
-        "address": "0xe57CA218d820393ee9095FBc265f525deD46E9A9",
-        "points": 100
+    "A02396601": {
+        "address": "0xD203fDBF9b68519EB4131AB5A0A2621a21e5A2c6",
+        "points": 1000000
     },
-    "A11111111": {
-        "address": "0x23316f2409D67eDB7BC6C34EB83CAf892216D2d3",
-        "points": 100
+    "A02367107": {
+        "address": "0xcF6B8257D8DA54E7ea76dCE49a5072158B6f8887",
+        "points": 1000000
+    },
+    "A02416918": {
+        "address": "0xFC8eeA02eC60ca604e5864876cd607fC7Fb0d6f8",
+        "points": 1000000
+    },
+    "A02402375": {
+        "address": "0xD620942608d32fe5625bbCB30f992Da2357549c9",
+        "points": 1000000
+    },
+    "A02412651": {
+        "address": "0x7Ed0F2EDcaeBe68712d40c618D8d38396fD94553",
+        "points": 1000000
+    },
+    "A02410625": {
+        "address": "0x81cb38e39042e3b60fd7778ea0574697b019bacc",
+        "points": 1000000
+    },
+    "A02393913": {
+        "address": "0xdd0d3edd0b71afe0f29681063ac06b36d6a4604d",
+        "points": 1000000
+    },
+    "A02459541": {
+        "address": "0x5cA135B1249f5f4B0B6587350bbFB79ee683340d",
+        "points": 1000000
+    },
+    "A02425522": {
+        "address": "0xf421d7c36f3cfcd201940671c111acbc7efdb768",
+        "points": 1000000
+    },
+    "A02424337": {
+        "address": "0xcab6a916ac4F13D7b46547966cE3A93Cd1B72181",
+        "points": 1000000
+    },
+    "A02400685": {
+        "address": "0x053c4bc0ae42da66f1f1a4a0bc5a9062b8b9dce3",
+        "points": 1000000
+    },
+    "A02336102": {
+        "address": "0x05bfF19DB76c555655DC82445EDD935FdF27BEFD",
+        "points": 1000000
+    },
+    "A02305957": {
+        "address": "0xb38460148c89aedf05f8a3d4c5fe0c01e1f5d703",
+        "points": 1000000
+    },
+    "A02356797": {
+        "address": "0xd09fCBda9Ebe9d7F7D90283cce0e4cEFC1AAB6E1",
+        "points": 1000000
+    },
+    "A02325266": {
+        "address": "0xb9ba579d47b124ebe5bb5d456e1cd9c26ff988f6",
+        "points": 1000000
+    },
+    "A02403026": {
+        "address": "0xd531937131C578701726676D5dc70721DE2A0bC3",
+        "points": 1000000
+    },
+    "A02347378": {
+        "address": "0x5f3d62e2e62df9e60589fb85573a77a8a20fffd7",
+        "points": 1000000
+    },
+    "A02341638": {
+        "address": "0xF7476146A81F25Af158927F530f5A6bf20ba8EAE",
+        "points": 1000000
+    },
+    "A02410116": {
+        "address": "0x881AC0182bA9dc7632410F919D360b8c18450B5e",
+        "points": 1000000
+    },
+    "A00287882": {
+        "address": "0x259f518ef2c1ea06f580aa4e3c5e07a6b792a5af",
+        "points": 1000000
+    },
+    "A02413133": {
+        "address": "0x607a33AA5d6E04a73b4507BA794F6Fc0859379D4",
+        "points": 1000000
+    },
+    "A02383504": {
+        "address": "0xbbFf38a27C2957cD87D921cfdB348178EBC488F0",
+        "points": 1000000
+    },
+    "A02352172": {
+        "address": "0x583601db1c2ec352a639cb67d48dc6dbc02d6006",
+        "points": 1000000
+    },
+    "A02357746": {
+        "address": "0x5b7434f51b278748b311ad1261687fdda63bd0fc",
+        "points": 1000000
+    },
+    "A02373290": {
+        "address": "0x6a53bab404fadd04641cf0c636ba9363522c0241",
+        "points": 1000000
+    },
+    "A02291459": {
+        "address": "0xb60df6c2c87d5f4163833742a0de3068bfb648f4",
+        "points": 1000000
+    },
+    "A02392046": {
+        "address": "0x25fbc2b31E963fD4F012DF87d7B7F878ed388b4b",
+        "points": 1000000
+    },
+    "A02338711": {
+        "address": "0x055168d561ca312bD4f79D9716dD1Fc02D59FcbA",
+        "points": 1000000
+    },
+    "A02383495": {
+        "address": "0x039D401441178799F304D209841dbf19C1FDDF4b",
+        "points": 1000000
+    },
+    "A02409496": {
+        "address": "0xD42229aD9CF411b5589b324351F3AAbf3d4A37f1",
+        "points": 1000000
+    },
+    "A02358563": {
+        "address": "0xB9Ce9676e87b4a503fe5F00eCeC948620086981e",
+        "points": 1000000
+    },
+    "a02403662": {
+        "address": "0x8861e331cF0eE36252232CC5F1b3B4c3aAC98315",
+        "points": 1000000
+    },
+    "A02356532": {
+        "address": "0xb729F83A89fE8A85c3cA85EEC2B9868C74A6E527",
+        "points": 1000000
+    },
+    "A02443162": {
+        "address": "0x3ecD55535421faCC0a8F56358F86Fd709143c7a7",
+        "points": 1000000
+    },
+    "A02366418": {
+        "address": "0x489932b3b66984ff207fa46b8365568384284ffa",
+        "points": 1000000
+    },
+    "A02356272": {
+        "address": "0x0caBF86372D4a9B880407cc90D9A90Eb9BD463A6",
+        "points": 1000000
+    },
+    "A02379551": {
+        "address": "0x5e079D435189e7D6a34da0DD10a136C55aEfdbEc",
+        "points": 1000000
+    },
+    "A02362769": {
+        "address": "0x8D1b520dA16D7FCe8578A92d0E0BB89786615974",
+        "points": 1000000
+    },
+    "A02398764": {
+        "address": "0xfb96ecb00d1439582803c8a1a830d836bab297c9",
+        "points": 1000000
+    },
+    "A02331420": {
+        "address": "0x088ce50e23b7ae9b53716924c239a8acce94adef",
+        "points": 1000000
+    },
+    "A02366851": {
+        "address": "0x1B8Ae86BBfDa104ABef6cA00f5dE44FB043B5d20",
+        "points": 1000000
     }
 }
