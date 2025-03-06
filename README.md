@@ -35,6 +35,10 @@ From the directory that dash.py is in run
 ```
 streamlit run dash.py
 ```
+Or
+```
+py -m streamlit run dash.py
+```
 The web app should open automatically, if it does not you can access it at addresses output in your terminal.
 The addresses are typically:
   Local URL: http://localhost:8501
